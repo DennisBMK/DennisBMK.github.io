@@ -1,0 +1,615 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+@media only screen and (max-width: 768px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}*/
+
+@media screen and (max-width: 768px) {
+  .ham {
+    position: absolute;
+    /* always keep ham on top of everything */
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    /* show the menu image */
+    background-image: url("https://ljc-dev.github.io/testing0/ham.svg");
+    background-size: 100%;
+  }
+  
+  /* change ham image to close */
+  .showClose {
+    background-image: url("https://ljc-dev.github.io/testing0/ham-close.svg");
+  }
+  
+  .navbar {
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    /* hide the menu above the screen by default */
+    transform: translateX(100%);
+    /* transition adds a little animation when sliding in and out the menu */
+    transition: transform 0.2s ease;
+  }
+  
+  .showNav {
+    /* show the menu */
+    transform: translateX(0);
+  }
+
+  #TopList {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  #TopList li {
+    /*display: inline;*/
+    background-color: #ff7700; /* Orange*/
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 1;
+    margin-bottom: 10px;
+    width: 70vw;
+  }
+
+  #TopList li:hover {
+    opacity: 0.6;
+  }
+
+  #TopList li:active {
+    background-color: #ff4800;
+  }
+}
+
+body {
+  background-color: #d3d3d3;
+  font-family: "Heebo", sans-sherif;
+}
+
+header {
+  min-height: 76px;
+  background-color: #1f4e4d;
+}
+
+.title-img {
+  float: left;
+  padding: 15px 32px;
+}
+
+@media screen and (min-width: 1165px){
+  .intro {
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro-text {
+    color: rgb(227, 242, 255);
+    font-family: "Heebo", sans-sherif;
+    font-size: 3rem;
+  }
+
+  .slider {
+    background: #d3d3d3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+  }
+}
+
+@media screen and (max-width: 1164px){
+  .intro{
+    background: transparent;
+    z-index: -10000;
+    width: 0%;
+    height: 0%;
+  }
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  margin-top: 2vh;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.captiontext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
+}
+
+#sitemap {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 768px){
+  .ham{
+    background-color: #1f4e4d;
+    border: none;
+  }
+  #TopList {
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  #TopList a {
+    padding: 10px;
+  }
+
+  #TopList li {
+    /*display: inline;*/
+    background-color: #ff7700; /* Orange*/
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    opacity: 1;
+    margin-bottom: 10px;
+  }
+
+  #TopList li:hover {
+    opacity: 0.6;
+  }
+
+  #TopList li:active {
+    background-color: #ff4800;
+  }
+}
+
+
+.profile-img {
+  float: right;
+  margin-right: 15px;
+}
+
+.Emp h1{
+  margin-left: 25%;
+}
+
+.Emp a:hover {
+  text-decoration: underline;
+}
+
+.Emp p {
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  margin: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Edu h1{
+  margin-left: 25%;
+}
+
+.Edu a:hover {
+  text-decoration: underline;
+}
+
+.Edu p {
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  margin: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Skills h1{
+  margin-left: 25%;
+}
+
+.Skills a:hover {
+  text-decoration: underline;
+}
+
+.Skills p {
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  margin: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Services h1{
+  margin-left: 25%;
+}
+
+.Services a:hover {
+  text-decoration: underline;
+}
+
+.Services p {
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  margin: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.Services{
+  min-height: calc(100vh - 83.2px - 336.4px);
+}
+
+.myWork h1{
+  margin-left: 25%;
+}
+
+.myWork a:hover {
+  text-decoration: underline;
+}
+
+.myWork p {
+  background-color: white;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 14px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  margin: 10px;
+  margin-right: 25%;
+  margin-left: 25%;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.myWork{
+  min-height: calc(100vh - 83.2px - 336.4px);
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: black;
+  text-decoration: none;
+}
+
+.top {
+  background: #ffffff;
+  opacity: 1;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+  /*height: 50vh;*/
+  margin-bottom: 15vh;
+  margin-right: 2vh;
+  margin-left: 2vh;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.top img {
+  margin: 1vh;
+}
+
+.top p {
+  margin: 1vh;
+}
+
+.work {
+  background: #ffffff;
+  opacity: 0;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+  /*height: 50vh;*/
+  margin-bottom: 5vh;
+  margin-right: 2vh;
+  margin-left: 2vh;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.work.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.work img {
+  margin: 1vh;
+}
+
+.work p {
+  margin: 1vh;
+}
+
+.about-div {
+  margin-left: 12.5%;
+  width: 75%;
+  background: #ffffff;
+  opacity: 1;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+  border-radius: 10px;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 15vh;
+}
+
+.about-div img {
+  margin: 1vh;
+}
+
+.about-div h1 {
+  margin: 1vh;
+}
+
+.about-text {
+  text-align: left;
+  margin: 1vh;
+}
+
+.service {
+  height: 200px;
+}
+
+Footer {
+  background-color: #1f4e4d;
+  display: inline-block;
+}
+
+@media screen and (min-width: 1295px){
+  .float-container {
+    padding: 70px;
+    min-height: 150px;
+  }
+
+  .social {
+    width: 35%;
+    float: left;
+    padding: 20px;
+  }
+  
+  .social a:hover {
+    text-decoration: underline;
+  }
+  
+  .aboutme {
+    width: 25%;
+    float: left;
+    padding: 20px;
+  }
+  
+  .contact {
+    width: 20%;
+    float: right;
+    padding: 20px;
+  }
+  
+  .contact a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media screen and (max-width: 1295px){
+  .float-container {
+    margin-left: 35%;
+  }
+  .social {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .social a:hover {
+    text-decoration: underline;
+  }
+
+  .aboutme {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact {
+    width: 40%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact a:hover {
+    text-decoration: underline;
+  }
+}
+
+.sitemap:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
